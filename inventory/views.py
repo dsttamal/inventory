@@ -26,7 +26,6 @@ def supplier(request):
         form = SuppliersForm(request.POST)  
         if form.is_valid():
             form.save()
-            form = SuppliersForm()
             return HttpResponseRedirect('/suppliers')
     else:  
         form = SuppliersForm()
