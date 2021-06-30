@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <!--<base href="https://test-inventory.omega.ac">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+    <title>OMEGA SOLUTION</title>
+    <link rel="stylesheet" href="{% static 'assets/css/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'auto.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'datatables/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'chosen/chosen.css' %}">
+    <link rel="stylesheet" href="{% static 'daterangepicker/daterangepicker.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<style>
+	
+.display-5 {
+ font-size:2.5rem;
+ font-weight:300;
+ line-height:1.2
+}
+	</style></head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container"><a class="navbar-brand" href="dashboard.php"><strong>OMEGA SOLUTION</strong><br><p>ERP SOLUTION</p></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="invoice">Invoice</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="inventory">Inventory</a></li>
+                    <li class="nav-item dropdown">
+						<a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Report</a>
+                        <div class="dropdown-menu" role="menu">
+							<a class="dropdown-item" role="presentation" href="sell">Sales Report</a>
+							<a class="dropdown-item" role="presentation" href="monthly-greport">Monthly Report</a>
+							<a class="dropdown-item" role="presentation" href="deleted">Deleted Invoice</a>
+						</div>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="suppliers">Suppliers</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="clients">Clients</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="sr">Sales Person</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="cashbook">Cashbook</a></li>
+      <!--              <li class="nav-item dropdown">-->
+						<!--<a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Ledger </a>-->
+      <!--                  <div class="dropdown-menu" role="menu">-->
+						<!--	<a class="dropdown-item" role="presentation" href="ledger?ledger=cash-sell">Cash Sell</a>-->
+							<!--<a class="dropdown-item" role="presentation" href="ledger?ledger=bank">Bank</a>-->
+						<!--	<a class="dropdown-item" role="presentation" href="ledger?ledger=suppliers-payment">Suppliers Payment</a>-->
+						<!--	<a class="dropdown-item" role="presentation" href="ledger?ledger=expense">Expense</a>-->
+							<!--<a class="dropdown-item" role="presentation" href="ledger?ledger=salary">Salary</a>-->
+						<!--</div>-->
+      <!--              </li>-->
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="signin.php">Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="bootstrap_datatables">
+    {% block content %}
+	{% endblock content %}
+</div>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'datatables/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'dataTableEdit/dataTables.cellEdit.js' %}"></script>
+    <script src="{% static 'chosen/chosen.jquery.js' %}"></script>
+    <script src="{% static 'auto.js' %}"></script>
+    <script src="{% static 'chosen/docsupport/init.js' %}"></script>
+    <script src="{% static 'daterangepicker/moment.min.js' %}"></script>
+    <script src="{% static 'daterangepicker/daterangepicker.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    {% block script %}
+	{% endblock script %}
+</body>
+</html>
