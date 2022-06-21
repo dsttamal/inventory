@@ -33,3 +33,16 @@ def supplier(request):
     suppliers_list = suppliers.objects.order_by('id')
     suppliers_list_pass = {'suppliers_list':suppliers_list, 'form':form}
     return render(request, 'supplier.html', context=suppliers_list_pass)
+
+def inventory(request):
+    if request.method == "POST":  
+        form = InventoryForm(request.POST)  
+        if form.is_valid():
+            #form.save()
+            return HttpResponseRedirect('/inventory')
+    else:  
+        form = InventoryForm()
+        
+    products_list = Inventory.objects.order_by('id')
+    products_list_pass = {'products_list':products_list, 'form':form}
+    return render(request, 'inventory.html', context=products_list_pass)
